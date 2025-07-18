@@ -1,12 +1,25 @@
 CSipSimple
 ==========
 
-CSipSimple for Android Studio Project
+Converted to CSipSimple for Android Studio Project,
 
-> the project fork from https://github.com/r3gis3r/CSipSimple, Now I have not worked on this project.
 
-CSipSimple 项目基本不会维护，建议使用 [linphone](http://www.linphone.org/)
+CSipSimple
 
-** remove-ActionBarSherlock ** 使用新 SDK 需要移除 ActionBarSherlock
+* Removeed depricated ActionBarSherlock.
 
-![截图](https://raw.githubusercontent.com/tqcenglish/CSipSimple/master/doc/screenshot.png)
+* Added PJSIP 2.12.1 version support.
+
+* Added OpenH264 code with PJSIP.
+
+* Added support for ARM64,x64,x32_64 devices.
+
+* Now work on Android OS 8+ onwards.
+
+* Still need to add vidoe support in app.
+
+* Support OPUS codec
+
+* Support OpenSSL 1.1.X
+
+* Support bgc729
