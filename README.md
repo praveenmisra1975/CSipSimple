@@ -12,7 +12,7 @@ CSipSimple
 
 * Added OpenH264 code with PJSIP.
 
-* Added support for ARM64,x64,x32_64 devices.
+* Added support for ARM64,x64,x86_64 devices.
 
 * Now work on Android OS 8+ onwards.
 
