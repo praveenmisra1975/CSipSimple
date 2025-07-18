@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk 34
+    namespace 'com.csipsimple'
+    buildFeatures{
+        aidl true
+        buildConfig true
+    }
+
+
+    useLibrary  'org.apache.http.legacy' // 需要去除
+    defaultConfig {
+        applicationId "com.csipsimple"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+
+
+}

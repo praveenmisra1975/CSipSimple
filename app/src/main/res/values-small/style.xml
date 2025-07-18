@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.SlidingTabActive" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@android:color/holo_green_light</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+</resources>
