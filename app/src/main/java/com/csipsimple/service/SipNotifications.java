@@ -255,7 +255,7 @@ public class SipNotifications {
         nb.setWhen(when);
 		Intent notificationIntent = new Intent(SipManager.ACTION_SIP_DIALER);
 		notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+		PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_MUTABLE);
 		
 		RegistrationNotification contentView = new RegistrationNotification(context.getPackageName());
 		contentView.clearRegistrations();
@@ -329,7 +329,7 @@ public class SipNotifications {
 		}
         
 		Intent notificationIntent = SipService.buildCallUiIntent(context, callInfo);
-		PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+		PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_MUTABLE);
 		
         inCallNotification.setContentTitle(formatNotificationTitle(R.string.ongoing_call, callInfo.getAccId()));
         inCallNotification.setContentText(formatRemoteContactString(callInfo.getRemoteContact()));
@@ -358,7 +358,7 @@ public class SipNotifications {
 
 		Intent notificationIntent = new Intent(SipManager.ACTION_SIP_CALLLOG);
 		notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+		PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_MUTABLE);
 
 		String remoteContact = callLog.getAsString(CallLog.Calls.NUMBER);
 		long accId = callLog.getAsLong(SipManager.CALLLOG_PROFILE_ID_FIELD);
@@ -396,7 +396,7 @@ public class SipNotifications {
 			notificationIntent.putExtra(SipMessage.FIELD_FROM, msg.getFrom());
 			notificationIntent.putExtra(SipMessage.FIELD_BODY, msg.getBody());
 			notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+			PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_MUTABLE);
 			
 			messageNotification.setContentTitle(from);
 			messageNotification.setContentText(msg.getBody());
@@ -431,7 +431,7 @@ public class SipNotifications {
         }
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
-                PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+                PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_MUTABLE);
 
         String messageText = "";
         if (acc != null) {
