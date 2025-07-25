@@ -23,5 +23,7 @@ CSipSimple
 * Support OpenSSL 1.1.X
 
 * Support bgc729
+  
+* Support H.263, H264, VP8, VP9 codecs for video call sipport.
 
   Contact MailID : info@neithsystems.com
