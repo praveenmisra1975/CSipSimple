@@ -111,6 +111,7 @@ public class PjSipAccount {
 			accountConfig = new AccountConfig();
 			accountConfig.setPriority(profile.priority);
 			accountConfig.getRegConfig().setRegisterOnAdd(true);
+			accountConfig.getRegConfig().setContactParams(";+sip.instance=\"<urn:uuid:1f11f215-40dd-42fb-9896-59a22ad9ugly>\"");
 
 
 			if (profile.acc_id != null) {
@@ -153,6 +154,7 @@ public class PjSipAccount {
 				accountConfig.getSipConfig().setProxies(v);
 
 
+
 			} else {
 				accountConfig.getSipConfig().setProxies(null);
 			}
@@ -182,17 +184,7 @@ public class PjSipAccount {
 			//accountConfig.getMwiConfig().setEnabled(profile.mwi_enabled);
 			accountConfig.getMediaConfig().setIpv6Use(profile.ipv6_media_use);
 
-			// RFC5626
-			if (profile.use_rfc5626) {
-				accountConfig.getNatConfig().setSipOutboundUse(1);
-				if (!TextUtils.isEmpty(profile.rfc5626_instance_id)) {
-					accountConfig.getNatConfig().setSipOutboundInstanceId(profile.rfc5626_instance_id);
-				}
-				if (!TextUtils.isEmpty(profile.rfc5626_reg_id)) {
-					accountConfig.getNatConfig().setSipOutboundRegId(profile.rfc5626_reg_id);
-				}
 
-			}
 			// Video
 			if (profile.vid_in_auto_show != -1)
 				accountConfig.getVideoConfig().setAutoShowIncoming(true);

@@ -295,7 +295,7 @@ public class BasePrefsWizard extends GenericPrefs {
 		    prefs.startEditing();
 			wizard.setDefaultParams(prefs);
 			prefs.endEditing();
-			applyNewAccountDefault(account);
+
 			Uri uri = getContentResolver().insert(SipProfile.ACCOUNT_URI, account.getDbContentValues());
 
 			Log.i(THIS_FILE, "In Account save - Account inserted: ");
@@ -332,18 +332,6 @@ public class BasePrefsWizard extends GenericPrefs {
 		}
 	}
 
-	/**
-	 * Apply default settings for a new account to check very basic coherence of settings and auto-modify settings missing
-     * @param account
-     */
-    private void applyNewAccountDefault(SipProfile account) {
-        if(account.use_rfc5626) {
-            if(TextUtils.isEmpty(account.rfc5626_instance_id)) {
-                String autoInstanceId = (UUID.randomUUID()).toString();
-                account.rfc5626_instance_id = "<urn:uuid:"+autoInstanceId+">";
-            }
-        }
-    }
 
     @Override
 	protected int getXmlPreferences() {
