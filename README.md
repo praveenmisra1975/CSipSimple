@@ -16,10 +16,14 @@ CSipSimple
 
 * Now work on Android OS 8+ onwards.
 
-* Still need to add vidoe support in app.
+* For vidoe support in app - Comtact at Below Mail ID.
 
 * Support OPUS codec
 
 * Support OpenSSL 1.1.X
 
 * Support bgc729
+  
+* Support H.263, H264, VP8, VP9 codecs for video call sipport.
+
+  Contact MailID : info@neithsystems.com
